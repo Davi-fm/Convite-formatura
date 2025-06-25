@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatura Davi & Arthur - Técnico em Redes 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Imagens/graduate.png"> </head>
+<body>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <span class="logo">Formatura 2025</span>
+             <button class="nav-toggle" aria-label="Abrir menu">&#9776;</button>
+            <ul>
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#about-course">O Curso</a></li>
+                <li><a href="#details">Detalhes</a></li>
+                <li><a href="#location">Local</a></li>
+                <li><a href="#rsvp">Confirmar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="hero" class="parallax-section">
+        <div class="hero-content">
+            <h1 class="fade-in-up">Formatura Técnico em Redes 2025</h1>
+            <p class="fade-in-up delay-1">Davi Fernandes Marques & Arthur Carmo dos Santos</p>
+            <a href="#rsvp" class="cta-button fade-in-up delay-2">Confirmar Presença</a>
+        </div>
+    </header>
+
+    <section id="about-course" class="section-padding">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Conectando o Futuro: Nosso Caminho em Redes</h2>
+            <div class="about-content">
+                <div class="about-text fade-in-up">
+                    <p>Celebrando a conclusão do Curso Técnico em Redes de Computadores Integrado ao Ensino Médio, um marco que nos equipou com o conhecimento para desvendar os mistérios da conectividade. Durante essa jornada, mergulhamos nos fundamentos de hardware, software, segurança de redes e comunicação de dados, preparando-nos para construir e otimizar as infraestruturas digitais que movem o mundo.</p>
+                    <p>É com imensa alegria que convidamos você para compartilhar este momento especial conosco, testemunhando a nossa transição para o universo profissional da tecnologia.</p>
+                </div>
+                <div class="about-image fade-in-up">
+                    <img src="Imagens/img_conceito_01.png" alt="Conceito do Curso de Redes de Computadores">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="details" class="section-padding dark-section">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Quando e Onde?</h2>
+            <div class="details-grid">
+                <div class="detail-item fade-in-up">
+                    <img src="Imagens/calendario.png" alt="Ícone de Calendário">
+                    <h3>Data</h3>
+                    <p>10 de Dezembro de 2025</p>
+                </div>
+                <div class="detail-item fade-in-up delay-1">
+                    <img src="Imagens/clock.png" alt="Ícone de Relógio">
+                    <h3>Hora</h3>
+                    <p>19h00 (Sete da noite)</p>
+                </div>
+                <div class="detail-item fade-in-up delay-2">
+                    <img src="Imagens/location.png" alt="Ícone de Localização">
+                    <h3>Local</h3>
+                    <p>Sítio Rio Dourado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="section-padding">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Nosso Ponto de Conexão</h2>
+            <p class="fade-in-up">O evento acontecerá no belíssimo Sítio Rio Dourado. Venha celebrar conosco!</p>
+            <div class="map-container fade-in-up">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3744.596144869279!2d-40.35414572428509!3d-20.18731118151246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbb6b69df0d8a59%3A0xc3f8f10b784a0c20!2sS%C3%ADtio%20Rio%20Dourado!5e0!3m2!1spt-BR!2sbr!4v1719163200000!5m2!1spt-BR!2sbr"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="rsvp" class="section-padding dark-section">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Confirme Sua Presença</h2>
+            <p class="fade-in-up"  style="margin-bottom: .5em;">Para nos ajudar com a organização, por favor, preencha o formulário abaixo.</p>
+            <form id="rsvp-form" class="fade-in-up" action="https://formspree.io/f/xpwrorel" method="POST">
+                <div class="form-group">
+                    <label for="name">Seu Nome Completo:</label>
+                    <input type="text" id="name" name="name" required placeholder="Ex: Maria da Silva">
+                </div>
+                <div class="form-group">
+                    <label for="guests">Número de Convidados (incluindo você):</label>
+                    <input type="number" id="guests" name="guests" min="1" value="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Seu E-mail:</label>
+                    <input type="email" id="email" name="email" required placeholder="Ex: seuemail@dominio.com">
+                </div>
+                <button type="submit" class="cta-button">Confirmar Presença</button>
+                <p id="form-message" class="form-message"></p>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Formatura Davi & Arthur. Todos os direitos reservados.</p>
+            <p>Conectando o presente ao futuro da tecnologia.</p>
+        </div>
+    </footer>
+
+    <script src="scrp.js"></script>
+</body>
+</html>

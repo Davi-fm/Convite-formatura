@@ -1,0 +1,591 @@
+/* Importação de Fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+/* Variáveis CSS para fácil personalização */
+:root {
+    --primary-color: #00bcd4; /* Ciano Tecnológico */
+    --secondary-color: #7b1fa2; /* Roxo Profundo */
+    --text-color-light: #e0e0e0;
+    --text-color-dark: #333;
+    --bg-dark: #1a1a2e; /* Azul Escuro Futurista */
+    --bg-light: #f0f2f5;
+    --gradient-hero: linear-gradient(135deg, #0f0c29, #302b63, #24243e); /* Gradiente para o Hero */
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    --border-radius: 8px;
+    --transition-speed: 0.5s ease-in-out;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color-light);
+    background-color: var(--bg-dark);
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+}
+
+/* Contêiner Geral */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navegação */
+#navbar {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(26, 26, 46, 0.9); /* Fundo com transparência */
+    padding: 15px 0;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+    transition: background-color var(--transition-speed);
+}
+
+#navbar.scrolled {
+    background-color: var(--bg-dark); /* Fundo sólido ao rolar */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+#navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+#navbar ul li {
+    margin-left: 30px;
+}
+
+#navbar ul li a {
+    color: var(--text-color-light);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.1rem;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+#navbar ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+
+#navbar ul li a:hover::after {
+    width: 100%;
+}
+
+#navbar ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Seções Gerais */
+.section-padding {
+    padding: 80px 0;
+    position: relative; /* Para animações */
+}
+
+.dark-section {
+    background-color: var(--bg-dark);
+}
+
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Botões CTA */
+.cta-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--bg-dark);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 188, 212, 0.4);
+}
+
+.cta-button:hover {
+    background: var(--secondary-color);
+    color: var(--text-color-light);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(123, 31, 162, 0.5);
+}
+
+/* Seção Hero */
+#hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: var(--gradient-hero);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden; /* Para garantir que o parallax funcione bem */
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/hero-background.webp') no-repeat center center/cover; /* Imagem de fundo parallax */
+    transform: translateZ(-1px) scale(1.1); /* Para efeito parallax */
+    filter: brightness(0.6); /* Escurece um pouco a imagem */
+    will-change: transform;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Acima do fundo parallax */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+#hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    color: white;
+    line-height: 1.1;
+}
+
+#hero p {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    font-weight: 300;
+}
+
+/* Seção Sobre o Curso */
+#about-course {
+    background-color: var(--bg-light);
+    color: var(--text-color-dark);
+}
+
+#about-course .section-title {
+    color: var(--secondary-color);
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.02);
+}
+
+/* Seção Detalhes do Evento */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.detail-item {
+    background-color: #2e2e4a; /* Um tom ligeiramente mais claro que o bg-dark */
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 1px solid rgba(0, 188, 212, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 188, 212, 0.3);
+}
+
+.detail-item img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px var(--primary-color)); /* Brilho nos ícones */
+}
+
+.detail-item h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.detail-item p {
+    font-size: 1.1rem;
+    color: var(--text-color-light);
+}
+
+/* Seção Localização */
+#location {
+    background-color: var(--bg-light);
+    color: var(--text-color-dark);
+}
+
+#location .section-title {
+    color: var(--secondary-color);
+}
+
+#location p {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.map-container {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    height: 450px; /* Altura fixa para o mapa */
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Seção Confirmação de Presença (RSVP) */
+#rsvp {
+    background-color: var(--bg-dark);
+}
+
+#rsvp form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #2e2e4a;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 1px solid rgba(123, 31, 162, 0.2);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    background-color: #1a1a2e;
+    color: var(--text-color-light);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group input[type="email"]:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 10px rgba(123, 31, 162, 0.5);
+}
+
+.form-message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* Rodapé */
+footer {
+    background-color: #111;
+    color: #bbb;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9rem;
+    border-top: 2px solid var(--secondary-color);
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+/* Animações (aparecendo ao rolar) */
+.fade-in-up {
+    opacity: 100;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+
+
+
+
+
+
+
+
+
+
+#hero {
+    position: relative;
+    min-height: 100vh; /* altura da tela */
+    background: url('Imagens/fundo.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* parallax */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Overlay escuro semi-transparente */
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, .8); /* 50% preto */
+    z-index: 1; /* acima da imagem, abaixo do texto */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* acima do overlay */
+    padding: 20px;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+/* Responsividade */
+@media (max-width: 992px) {
+    #hero h1 {
+        font-size: 3.5rem;
+    }
+    #hero p {
+        font-size: 1.5rem;
+    }
+    .nav-container {
+        flex-direction: column;
+    }
+    #navbar ul {
+        margin-top: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    #navbar ul li {
+        margin: 5px 15px;
+    }
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-image {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 60px 0;
+    }
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    #hero h1 {
+        font-size: 2.8rem;
+    }
+    #hero p {
+        font-size: 1.2rem;
+    }
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    .detail-item {
+        padding: 20px;
+    }
+    .detail-item h3 {
+        font-size: 1.5rem;
+    }
+    #rsvp form {
+        padding: 30px;
+    }
+    .form-group label {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+    #navbar ul li {
+        margin: 5px 10px;
+        font-size: 0.9rem;
+    }
+    #hero h1 {
+        font-size: 2rem;
+    }
+    #hero p {
+        font-size: 1rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Menu hamburguer - só exibir em telas pequenas */
+.nav-toggle {
+    background: none;
+    border: none;
+    color: var(--text-color-light);
+    font-size: 2rem;
+    cursor: pointer;
+    display: none; /* escondido por padrão em desktop */
+}
+
+/* Esconde o menu padrão quando em telas menores */
+@media (max-width: 768px) {
+    /* Container agora alinhado horizontalmente */
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #navbar ul {
+        display: none;             /* escondido */
+        flex-direction: column;    /* em coluna */
+        width: 100%;
+        background: var(--bg-dark);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1rem 0;
+        box-shadow: var(--box-shadow);
+    }
+
+    #navbar ul.open {
+        display: flex; /* mostra o menu quando a classe "open" estiver presente */
+    }
+
+    .nav-toggle {
+        display: block; /* exibe o hambúrguer em telas menores */
+    }
+
+    #navbar ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
