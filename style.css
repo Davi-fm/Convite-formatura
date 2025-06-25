@@ -589,3 +589,32 @@ footer p {
         text-align: center;
     }
 }
+
+
+/* ==================== MENU MOBILE ==================== */
+@media (max-width: 768px) {
+    #navbar ul {
+        display: none;             /* Escondido por padrão */
+        flex-direction: column;    /* Em coluna no mobile */
+        width: 100%;
+        background: var(--bg-dark);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1rem 0;
+        box-shadow: var(--box-shadow);
+        z-index: 999;             /* acima de outros conteúdos */
+    }
+
+    #navbar ul.open {
+        display: flex !important;  /* Mostrar quando "open" */
+    }
+
+    .nav-toggle {
+        display: block;            /* Exibir botão hamburguer */
+        position: relative;
+        z-index: 1000;
+    }
+}
+
+
